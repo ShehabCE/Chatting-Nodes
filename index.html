@@ -5,22 +5,36 @@
 		#Chat {
 			height: 500px;
 		}
+		
 		#ContentWrap {
 			display: none;
 		}
 
 		#NickWrap {
 			color: blue;
+		}
 
-		}
 		#ChatWrap {
+			background-color: #ADD8E6;
 			float: left;
-			border: 1px #000 solid;
+			border: 2px #000 solid;
+			vertical-align: middle;
 		}
+		#HEADER {
+			vertical-align: middle;
+			text-align: center;
+			font-size: 30px;
+			font-style: italic;
+			color: darkblue;
+		}
+		body {
+			background-color: #d3d3d3
+		}
+
 	</style>
 </head>
 <body>
-
+<header id="HEADER">Chatting Nodes</header>
 <div id="NickWrap">
 	<p><strong>Enter a username:</strong></p>
 	<form id="setNick">
@@ -34,7 +48,7 @@
 		<div id="ChatWrap">
 			<div id="Chat"></div>
 			<form id="send-message">
-				<input size = "35" id="message"></input>
+				<input size = "50" id="message"></input>
 				<input type="submit"></input>
 			</form>
 		</div>
@@ -63,20 +77,22 @@
 					if(data) {
 						$('#NickWrap').hide();
 						$('#ContentWrap').show();
+						$('#ContentWrap').css({
+					        'vertical-align': 'middle'
+					    });
 					}
 					else {
 						$nickError.html('That username is already taken! :(');
 					}
-
 				});
 				$nickBox.val('');
 			});
 
 			socket.on('usernames', function(data){
-				var html = '';
+				var html = '<strong><u>Online Nodes</u></strong><br>';
 				for(i=0; i<data.length; i++)
 				{
-					html += data[i] + '<br/>'
+					html += ' -' +data[i] + '<br/>'
 				}
 				$users.html(html);
 
@@ -90,7 +106,7 @@
 			});
 
 			socket.on('New Message', function(data) {
-				$chat.append(data + "<br/>");
+				$chat.append('<strong>' + data.nick + ': </strong>' + data.msg + '</br>');
 			})
 		})
 	</script>
