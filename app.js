@@ -5,7 +5,7 @@ var express = require('express'),
 
 var chatting_users = {};
 
-server.listen(3000);
+server.listen(process.env.PORT || 3000);
 
 app.get('/', function(req, res) 
 {
