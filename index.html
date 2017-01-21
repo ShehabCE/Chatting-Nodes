@@ -1,39 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<title>Chatting-Nodes</title>
-	<style>
-		#Chat {
-			height: 500px;
-		}
-		
-		#ContentWrap {
-			display: none;
-		}
-
-		#NickWrap {
-			color: blue;
-		}
-
-		#ChatWrap {
-			background-color: #ADD8E6;
-			float: left;
-			border: 2px #000 solid;
-			vertical-align: middle;
-			overflow-y: scroll
-
-		}
-		#HEADER {
-			vertical-align: middle;
-			text-align: center;
-			font-size: 30px;
-			font-style: italic;
-			color: darkblue;
-		}
-		body {
-			background-color: #d3d3d3
-		}
-
-	</style>
+	<link href="/css/chatstyle.css" rel="stylesheet" type="text/css" media="screen, projection" />
 </head>
 <body>
 <header id="HEADER">Chatting Nodes</header>
@@ -108,7 +76,7 @@
 			});
 
 			socket.on('New Message', function(data) {
-				$chat.append('<strong>' + data.nick + ': </strong>' + data.msg + '</br>');
+			    $chat.append('<strong>' + data.nick + ': </strong>' + data.msg + '</br>');
 			})
 		})
 	</script>
