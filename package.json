@@ -1,18 +1,20 @@
 {
-	"name":"Chatting-Nodes",
-	"version":"0.0.1",
-	"description": "A simple Node.js chatting application.",
-	"main":"app.js",
-	"scripts": {
-		"start": "node app.js"
-	},
-	"private":"true",
-	"dependencies":{
-		"socket.io": "*",
-		"express": "*"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/ShehabCE/Chatting-Nodes"
-	}
+  "name": "Chatting-Nodes",
+  "version": "0.0.1",
+  "description": "A simple Node.js chatting application.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "private": "true",
+  "dependencies": {
+    "express": "*",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "socket.io": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShehabCE/Chatting-Nodes"
+  }
 }
