@@ -6,6 +6,7 @@ body {
 #Chat {
     height: 500px;
     overflow-y: scroll;
+    color: black;
 }
 
 #ContentWrap {

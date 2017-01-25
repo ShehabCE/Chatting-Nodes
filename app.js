@@ -26,6 +26,7 @@ io.sockets.on('connection', function(socket){
 			chatting_users[socket.nickname] = socket;
 
 			io.sockets.emit('usernames', Object.keys(chatting_users));
+			socket.broadcast.emit('New Message', {msg: "("+ socket.nickname + ") has joined the room!", nick: "Server"});
 		}
 	});
 
@@ -36,7 +37,7 @@ io.sockets.on('connection', function(socket){
 	socket.on('disconnect', function(data) {
 		if(!socket.nickname)
 			return;
-		socket.broadcast.emit('New Message', {msg: "("+ socket.nickname + ") has left the chatroom.", nick: "Server"});
+		socket.broadcast.emit('New Message', {msg: "("+ socket.nickname + ") has left the room!", nick: "Server"});
 		delete chatting_users[socket.nickname];
 		io.sockets.emit('usernames', Object.keys(chatting_users));
 	});
