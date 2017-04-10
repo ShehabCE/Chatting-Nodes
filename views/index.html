@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <title>Chatting-Nodes</title>
+    <link href="/css/chatstyle.css" rel="stylesheet" type="text/css" media="screen, projection"/>
+</head>
+<body>
+<div id="app">
+    <!--TODO: Refactor html files and split to public and private chats...-->
+    <header id="HEADER">Chatting Nodes</header>
+    <div id="NickWrap">
+        <p><strong>Enter a username:</strong></p>
+        <form id="setNick">
+            <input size="35" id="nickname"></input>
+            <input type="submit"></input>
+        </form>
+        <p id="NickError"></p>
+    </div>
+
+    <div id="ContentWrap">
+        <div id="ChatWrap">
+            <div id="Chat"></div>
+            <form id="send-message">
+                <input size="50" id="message"></input>
+                <input type="submit"></input>
+            </form>
+        </div>
+        <div id="users"></div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/public_message_send.js"></script>
+
+</body>
+</html>

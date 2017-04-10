@@ -3,18 +3,16 @@ var express = require('express'),
 	server = require('http').createServer(app),
 	io = require('socket.io').listen(server);
 
-var chatting_users = {};
-//app.set('port', (process.env.PORT || 3000));
+var chatting_users = {};//app.set('port', (process.env.PORT || 3000));
 
 server.listen(process.env.PORT || 3000);
 
 app.use(express.static('public'));
+app.use(require('./routes/routes'));
+//TODO: Fix views routing...
+app.set('views', '/views');
 
-app.get('/', function(req, res) 
-{
-	res.sendFile(__dirname + '/index.html');
-});
-
+//TODO: Add Private Messaging...
 io.sockets.on('connection', function(socket){
 
 	socket.on('new user', function(data, callback) {

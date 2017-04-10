@@ -3,6 +3,7 @@ body {
     background-color: #d3d3d3;
 }
 
+/*TODO: Refactor CSS code...*/
 #Chat {
     height: 500px;
     overflow-y: scroll;
