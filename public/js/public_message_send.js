@@ -1,3 +1,21 @@
+var socket = io.connect();
+var $Chat = $('#Chat');
+
+function send_public_message() {
+    var message = document.getElementById('message').value;
+
+
+}
+
+function notify_user_joined(data) {
+    $Chat.append('<strong>' + data.nick + ': </strong>' + data.msg + '</br>');
+}
+
+
+socket.on('New Message', function (data) {
+    notify_user_joined(data);
+});
+
 jQuery(function ($) {
     var socket = io.connect();
     var $nickForm = $('#setNick');

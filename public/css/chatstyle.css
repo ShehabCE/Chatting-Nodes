@@ -1,6 +1,6 @@
 
 body {
-    background-color: #d3d3d3;
+    background-color: #257374;
 }
 
 /*TODO: Refactor CSS code...*/
@@ -15,7 +15,9 @@ body {
 }
 
 #NickWrap {
-    color: blue;
+    color: white;
+    top: 50%;
+    left: 50%;
 }
 #users {
 
@@ -31,5 +33,5 @@ body {
     text-align: center;
     font-size: 30px;
     font-style: italic;
-    color: darkblue;
+    color: white;
 }
