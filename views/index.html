@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <head>
+    <meta charset="UTF-8">
     <title>Chatting-Nodes</title>
-    <link href="/css/chatstyle.css" rel="stylesheet" type="text/css" media="screen, projection"/>
+    <link href="/css/chatstyle.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="app">
@@ -9,17 +10,12 @@
     <header id="HEADER">Chatting Nodes</header>
     <div id="NickWrap">
         <p><strong>Enter a username:</strong></p>
-        <form id="setNick">
-            <input size="35" id="nickname"></input>
-            <input type="submit" onclick="location.href='public'; "></input>
-        </form>
+        <label for="nickname"></label><input size="35" id="nickname"/>
+        <input type="submit" onclick="go_to_public_chatroom()"/>
         <p id="NickError"></p>
     </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script src="/socket.io/socket.io.js"></script>
-<script src="js/public_message_send.js"></script>
-
+<script src="/js/logging_in.js"></script>
 </body>
-</html>

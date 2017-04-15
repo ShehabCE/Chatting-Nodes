@@ -1,18 +1,18 @@
 var express = require('express');
 var router = express.Router();
+var path = require('path');
 
 router.get('/', function (request, response) {
-
-    response.sendfile('views/index.html')
+    response.sendFile(path.resolve('views/index.html'));
 });
-//TODO: Adjust re-reouting...
-router.get('/online_groups', function (request, response) {
 
-    response.sendfile('views/online_groups.html')
+router.get('/online_groups', function (request, response) {
+    response.sendFile(path.resolve('views/online_groups.html'));
 });
 
 router.get('/public', function (request, response) {
-    response.sendfile('views/public.html')
+    response.sendFile(path.resolve('views/public.html'));
 });
+
 
 module.exports = router;

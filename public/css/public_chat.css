@@ -12,3 +12,7 @@
     width: 100%;
     background-color: black;
 }
+
+#online-users {
+    float: right;
+}
