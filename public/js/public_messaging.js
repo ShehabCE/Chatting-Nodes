@@ -1,17 +1,16 @@
 var socket = io.connect();
 var $Chat = $('#ChatBox');
 var $online_users = $('#online-users');
-
+var online_people_to_chat = [];
 function send_public_message() {
     var message = document.getElementById('message').value;
     socket.emit('send message', message);
     document.getElementById('message').value = '';
-    //         socket.emit('send message', $messageBox.val());
-//         $messageBox.val('');
 }
 
 function new_message(data) {
-    $Chat.append('<strong>' + data.nick + ': </strong>' + data.msg + '</br>');
+    var message_div = '<div id="single_message"><strong>' + data.nick + ': </strong>' + data.msg + '</br>';
+    $Chat.append(message_div);
 }
 
 function joined_public_chat() {
@@ -22,7 +21,8 @@ function joined_public_chat() {
     socket.on('usernames', function (data) {
         var list_of_online_users = '<I>Online Nodes</I><br>';
         for (var i = 0; i < data.length; i += 1) {
-            list_of_online_users += '-' + data[i] + '<br/>';
+            online_people_to_chat[i] = data[i];
+            list_of_online_users += '-<a>' + data[i] + '</a><br/>';
         }
         $online_users.html(list_of_online_users);
     })

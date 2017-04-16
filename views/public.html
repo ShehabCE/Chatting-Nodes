@@ -11,14 +11,15 @@
 
 <div id="PublicContent">
     <p> Public Chatroom </p>
-    <div id="online-users"></div>
     <div id="Chatroom">
         <div id="ChatBox"></div>
         <div id="MessageBox">
-            <label for="message"></label><input id="message">
+            <input id="message">
             <input type="submit" onclick="send_public_message()">
         </div>
+
     </div>
+    <div id="online-users"></div>
 
 </div>
 <!--<div id="ContentWrap">-->
@@ -35,6 +36,6 @@
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/logging_in.js"></script>
-<script src="/js/public_message_send.js"></script>
+<script src="/js/public_messaging.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@ router.get('/', function (request, response) {
 });
 
 router.get('/online_groups', function (request, response) {
-    response.sendFile(path.resolve('views/online_groups.html'));
+    response.sendFile(path.resolve('views/private.html'));
 });
 
 router.get('/public', function (request, response) {

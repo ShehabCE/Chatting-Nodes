@@ -7,29 +7,34 @@
 }
 
 #online-users {
-    float: right;
     font-size: 15px;
 }
 
 #Chatroom {
-    top: 10%;
     float: left;
+    display: inline;
     height: 500px;
     width: 600px;
     overflow-y: scroll;
-    background-color: #ADD8E6;
+    background-color: slategray;
+    border: 2px solid darkslategray;
 }
 
 #MessageBox {
     position: absolute;
     bottom: 0;
     height: 50px;
+    width: inherit;
 }
 
 #ChatBox {
     font-size: 15px;
     color: black;
     overflow-y: scroll;
+    text-align: left;
     position: absolute;
 }
 
+#message {
+    width: 80%;
+}
