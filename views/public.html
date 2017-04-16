@@ -6,16 +6,19 @@
     <link href="/css/chatstyle.css" rel="stylesheet" type="text/css">
     <link href="/css/public_chat.css" rel="stylesheet" type="text/css">
 
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/public_message_send.js"></script>
 </head>
 <body>
 
 <div id="PublicContent">
     <p> Public Chatroom </p>
     <div id="online-users"></div>
-    <div id="ChatContent"></div>
+    <div id="Chatroom">
+        <div id="ChatBox"></div>
+        <div id="MessageBox">
+            <label for="message"></label><input id="message">
+            <input type="submit" onclick="send_public_message()">
+        </div>
+    </div>
 
 </div>
 <!--<div id="ContentWrap">-->
@@ -29,6 +32,9 @@
 <!--<div id="users"></div>-->
 <!--</div>-->
 
-
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/logging_in.js"></script>
+<script src="/js/public_message_send.js"></script>
 </body>
 </html>

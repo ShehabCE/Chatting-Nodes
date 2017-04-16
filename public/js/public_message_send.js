@@ -1,32 +1,39 @@
 var socket = io.connect();
-var $Chat = $('#Chat');
+var $Chat = $('#ChatBox');
 var $online_users = $('#online-users');
 
 function send_public_message() {
     var message = document.getElementById('message').value;
+    socket.emit('send message', message);
+    document.getElementById('message').value = '';
+    //         socket.emit('send message', $messageBox.val());
+//         $messageBox.val('');
 }
 
-function notify_user_joined(data) {
+function new_message(data) {
     $Chat.append('<strong>' + data.nick + ': </strong>' + data.msg + '</br>');
 }
 
 function joined_public_chat() {
-    socket.emit('new user', $username, function (data) {
+    var user = localStorage.getItem("storageName");
+    socket.emit('new user', user, function (data) {
     });
 
     socket.on('usernames', function (data) {
         var list_of_online_users = '<I>Online Nodes</I><br>';
         for (var i = 0; i < data.length; i += 1) {
-            list_of_online_users += '|>' + data[i] + '<br/>';
+            list_of_online_users += '-' + data[i] + '<br/>';
         }
         $online_users.html(list_of_online_users);
     })
 }
 
 socket.on('New Message', function (data) {
-    notify_user_joined(data);
+    new_message(data);
 });
 
+
+// Execution starts here...
 joined_public_chat();
 
 // jQuery(function ($) {

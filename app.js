@@ -3,7 +3,8 @@ var express = require('express'),
 	server = require('http').createServer(app),
 	io = require('socket.io').listen(server);
 
-var chatting_users = {};//app.set('port', (process.env.PORT || 3000));
+var chatting_users = {};
+//app.set('port', (process.env.PORT || 3000));
 
 server.listen(process.env.PORT || 3000);
 

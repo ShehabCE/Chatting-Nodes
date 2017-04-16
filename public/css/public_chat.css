@@ -6,13 +6,30 @@
     color: white;
 }
 
-#ChatContent {
-    float: left;
-    top: 55%;
-    width: 100%;
-    background-color: black;
-}
-
 #online-users {
     float: right;
+    font-size: 15px;
 }
+
+#Chatroom {
+    top: 10%;
+    float: left;
+    height: 500px;
+    width: 600px;
+    overflow-y: scroll;
+    background-color: #ADD8E6;
+}
+
+#MessageBox {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+}
+
+#ChatBox {
+    font-size: 15px;
+    color: black;
+    overflow-y: scroll;
+    position: absolute;
+}
+
