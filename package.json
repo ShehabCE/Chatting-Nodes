@@ -7,10 +7,7 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "*",
-    "path": "^0.12.7",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "express": "^4.15.2",
     "socket.io": "^1.7.3",
     "spinkit": "^1.2.5"
   },
